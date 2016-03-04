@@ -1,0 +1,118 @@
+//show logo hover modal
+body.modal-open {
+    //remove positioned scope
+    .navbar-fixed-top{
+        position: inherit;
+    }
+    //show brand
+    .navbar-brand{
+        z-index: 999999;
+        position: fixed;
+    }
+}
+
+.navbar-brand {
+    padding: 0;
+}
+.logo-wrap{
+    padding-top: 3px;
+    position: fixed;
+}
+/*logo effect*/
+img.logo-img{
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    width: 60%;
+    top: 150px;
+    left:10px;
+}
+
+body.main-img-left img.logo-img{
+    top: 0;
+    width: 100px;
+}
+
+
+
+section#home img#main-img{
+    transition: all 0.5s ease;
+
+    position: fixed;
+    top: 100px;
+    left: 30%;
+}
+body.main-img-left section#home img#main-img{
+    left: -50%;
+    opacity: 0.5;
+}
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .navbar-brand {
+        min-width: 150px;
+    }
+
+    img.logo-img{
+        width: 68%;
+        left:30px;
+
+    }
+    body.main-img-left img.logo-img{
+        width: 115px;
+    }
+
+    /*    */
+    section#home img#main-img{
+
+        left: 15%;
+    }
+    body.main-img-left section#home img#main-img{
+        left: -40%;
+        opacity: 0.5;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    
+    section#home img#main-img{
+
+        /*position: fixed;*/
+        /*transition: all 0.5s ease;*/
+        top: 100px;
+        left: 25%;
+    }
+    body.main-img-left section#home img#main-img{
+        opacity: 1;
+        left: -20%;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 1200px) { 
+
+    .navbar-brand {
+        min-width: 180px;
+    }
+
+    img.logo-img{
+        width: 100%;
+        left:50px;
+
+    }
+    section#home img#main-img{
+
+        /*position: fixed;*/
+        /*transition: position 0.5s ease;*/
+        top: 100px;
+        left: 25%;
+    }
+    body.main-img-left section#home img#main-img{
+        opacity: 1;
+        left: -15%;
+    }
+
+}
+
+/*-------------*/

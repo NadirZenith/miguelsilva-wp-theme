@@ -1,0 +1,228 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+//includes
+// Import the Bootstrap LESS here
+
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+@import '../../bower_components/font-awesome/less/font-awesome.less';
+
+// Reset the icon font paths
+
+@fa-font-path: "../../../bower_components/font-awesome/fonts";
+@icon-font-path: "../../../bower_components/bootstrap/fonts/";
+
+//vars
+@font-color: #000;
+@primary-color: #f9d780;
+@secondary-color: #FFEDBE;
+@navbar-background: rgba(84,135,157,0.7);
+
+html {
+    opacity: 0;
+    /*width: 100%;*/
+    height: 100%;
+    /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
+}
+body {
+    /*width: 100%;*/
+    height: 100%;
+    color: @font-color;
+    background-color: @secondary-color;
+}
+
+@import 'navbar';
+@import 'home-effect';
+@import 'sections';
+@import 'popups';
+
+/* slider */
+.single-event{
+    height: 200px;
+    overflow: hidden;
+    display: table-cell; 
+    vertical-align: middle;
+
+    img{
+        width: 100%;
+        max-height: 100%;
+    }
+}
+.carousel-controls  {
+    a {
+        color: @font-color;
+        /*letter-spacing: 30px;*/
+    }
+}
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .single-event{
+        height: 350px;
+    }
+}
+
+
+/* img */
+#imagemodal .modal-body{
+    /*max-height: 100%;*/
+    padding: 0;
+    text-align: center;
+}
+#imagemodal .modal-body img{
+    display: inline-block;
+}
+.modal-content {
+    background-color: @secondary-color;   
+}
+
+/* form */
+form{
+    /*padding-bottom: 50px;*/
+}
+.form-group .help-block{
+    margin-bottom: 0;
+    color:#a94442;
+    ul {
+        list-style: none;
+        margin-bottom: 0;
+    }
+}
+.form-control{//input
+              height: 30px;
+}
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: .5em;
+    /*border-bottom: 1px solid @secondary-color;*/
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.5em;
+    background: 0 0;
+    background-color: #fff;
+    box-shadow: none!important;
+    resize: none;
+}
+
+.floating-label-form-group label {
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0;
+    font-size: .85em;
+    line-height: 1.764705882em;
+    vertical-align: middle;
+    vertical-align: baseline;
+    opacity: 0;
+    -webkit-transition: top .3s ease,opacity .3s ease;
+    -moz-transition: top .3s ease,opacity .3s ease;
+    -ms-transition: top .3s ease,opacity .3s ease;
+    transition: top .3s ease,opacity .3s ease;
+}
+
+.floating-label-form-group::not(:first-child) {
+    padding-left: 14px;
+    /*border-left: 1px solid @secondary-color;*/
+}
+
+.floating-label-form-group-with-value label {
+    top: 0;
+    opacity: 1;
+}
+
+.floating-label-form-group-with-focus label {
+    color: #18bc9c;
+}
+
+form .row:first-child .floating-label-form-group {
+    /*border-top: 1px solid @secondary-color;*/
+}
+
+/*table */
+.table{
+    font-size: 18px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border: 0;
+}
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border: 0;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #CFAC55;
+}
+
+/* button MIXINS ?*/
+.btn-default {
+    color: #fff;
+    background-color: rgba(84,135,157,0.7);
+    border:none;
+    &:hover,
+        &:focus,
+        &:active,
+        &:visited,
+        /*&:focus:visited,*/
+        &:focus:active
+        {
+        outline: none;
+        border:none;
+        color: #fff;
+        background-color: rgba(84,135,157,0.9);
+    }
+}
+
+/*iframe (soundcloud)*/
+a:visited,
+a:active,
+iframe{
+    border: 0;
+    width: 100%;
+}
+
+a:focus{
+    outline: none;
+}
+
+iframe{
+    height: 320px;
+}
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    iframe{
+        height: 450px;
+    }
+}
+
+.carousel .carousel-indicators li{
+    border-color: @font-color;
+
+    &.active{
+        background-color: @font-color;
+
+    }
+}
+

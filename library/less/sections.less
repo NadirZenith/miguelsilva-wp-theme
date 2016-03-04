@@ -1,0 +1,117 @@
+
+/*
+ * sections
+ */
+.full-height {
+    min-height: 100%;
+    text-align: center;
+    background: @secondary-color;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    &.primary-bg{
+        background: @primary-color;
+    }
+}
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .full-height {
+        padding-top: 50px;
+    }
+}
+
+
+/* 2 bio*/
+section#biography
+{
+
+    p
+    {
+        /*font-size: 24px;*/
+        font-size: 1.3em;
+        margin-bottom: 35px;
+    }
+}
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    section#biography
+    {
+        p
+        {
+            font-size: 1.6em;
+        }
+    }
+}
+
+address{
+    font-style: italic;
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    footer.full-height > div,
+    section.full-height:not(#home) > div{
+        visibility: visible;
+        opacity: 1;
+
+        transition: all 0.5s ease-in-out;
+    }
+    body.mouse-leave-top footer.full-height > div,
+    body.mouse-leave-top section:not(#home) > div{
+        visibility: hidden;
+        opacity: 0;
+    }
+    section#contact
+    {
+        .contact-text{
+            margin-top: 105px;
+        }
+    }
+}
+
+
+.full-height{
+
+
+    /* stars */
+    hr.star{
+        margin: 25px auto 30px;
+        padding: 0;
+        max-width: 250px;
+        /*border: 0;*/
+        border-color: 0;
+        border-top: solid 5px;
+        text-align: center;
+    }
+
+    hr.star:after {
+        content: "\f005";
+        display: inline-block;
+        position: relative;
+        top: -.8em;
+        padding: 0 .25em;
+        font-family: FontAwesome;
+        font-size: 2em;
+    }
+
+
+    hr.star{
+        /*hr color*/
+        border-color: @font-color; 
+    }
+    hr.star:after {
+        /*star-color*/
+        color: @font-color;
+        background-color: @secondary-color;
+    }
+
+    &.primary-bg{
+        hr.star:after {
+            /*star-color*/
+            /*color: @font-color;*/
+            background-color: @primary-color;
+        } 
+
+    }
+
+
+}

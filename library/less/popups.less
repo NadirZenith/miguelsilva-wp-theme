@@ -1,0 +1,95 @@
+.modal-dialog{
+    z-index: 1050;
+}
+/* modals */
+/* bio */
+
+.full-screen-modal .modal-content h2 {
+    margin: 0;
+    font-size: 3em;
+}
+.full-screen-modal .modal-content p {
+    font-size: 1.5em;
+}
+
+.full-screen-modal .modal-content img {
+    margin-bottom: 30px;
+}
+
+
+.full-screen-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    z-index: 10000;
+}
+
+.full-screen-modal .close-modal {
+    cursor: pointer;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1000;
+
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+}
+
+
+.full-screen-modal .close-modal .lr ,
+.full-screen-modal .close-modal .lr .rl {
+    width: 2px;
+    height: 50px;
+    background-color: @navbar-background;
+
+    z-index: 1051;
+
+}
+.full-screen-modal .close-modal .lr {
+    margin-left: 35px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.full-screen-modal .close-modal .lr .rl {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/*.full-screen-modal */
+.modal-backdrop {
+    /*display: none;*/
+    opacity: 0;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/*sm ≥ 768px Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .full-screen-modal .close-modal {
+        top: 25px;
+        right: 25px;
+    }
+
+    .full-screen-modal .close-modal .lr ,
+    .full-screen-modal .close-modal .lr .rl {
+        width: 2px;
+        height: 50px;
+
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }
