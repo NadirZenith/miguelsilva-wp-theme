@@ -33,7 +33,8 @@
 
         //add popover to slider gallery
         //requires html
-        $('a[data-toggle="popover"]').on("click", function () {
+        $('a[data-toggle="popover"]').on("click", function (e) {
+            e.preventDefault();
             var img_src = $(this).find('img').attr('src');
             $('#modalimagepreview').attr('src', img_src); // here asign the image to the modal when the user click the enlarge link
             $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
