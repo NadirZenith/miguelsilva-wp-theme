@@ -28,7 +28,7 @@ function wp_bootstrap_theme_js()
     // This is the full Bootstrap js distribution file. If you only use a few components that require the js files consider loading them individually instead
     wp_register_script('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', array('jquery'), '1.2');
 
-    wp_register_script('wpbs-js', get_stylesheet_directory_uri() . '/library/dist/js/scripts.88fd55bb.min.js', array('bootstrap'), '1.2');
+    wp_register_script('wpbs-js', get_stylesheet_directory_uri() . '/library/dist/js/scripts.23dc88eb.min.js', array('bootstrap'), '1.2');
     wp_register_script('wpbs-js-dev', get_stylesheet_directory_uri() . '/library/dist/js/scripts.min.js', array('bootstrap'), '1.2');
 
     wp_register_script('modernizr', get_template_directory_uri() . '/bower_components/modernizer/modernizr.js', array('jquery'), '1.2');
