@@ -41,7 +41,7 @@ function wp_bootstrap_theme_js()
 /**
  * show pages in main query
  */
-function exclude_category($query)
+function single_page_app_query($query)
 {
     if (!$query->is_main_query() || is_admin()) {
         return;
@@ -49,11 +49,8 @@ function exclude_category($query)
     $query->set('showposts', -1);
     $query->set('post_type', array('page'));
     $query->set('orderby', array('menu_order' => 'ASC'));
-    /* $query->set('order', 'ASC'); */
-    /* dd($query); */
 }
-add_action('pre_get_posts', 'exclude_category');
-
+add_action('pre_get_posts', 'single_page_app_query');
 
 
 /*

@@ -52,8 +52,7 @@
                     </button>
                     <a class="navbar-brand page-scroll" href="#home">
                         <div class="logo-wrap">
-                            <!--<img class="logo-img img-responsive" alt="Miguel Silva Logo" src="img/miguel-silva-logo.png" >-->
-                            <img class="logo-img" alt="Miguel Silva Logo" src="<?php echo get_option('logo') ?>" >
+                            <img class="logo-img" alt="Miguel Silva Logo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/img/miguel-silva-logo.svg" >
                         </div>
                     </a>
                 </div>
@@ -89,6 +88,6 @@
         <!--</header> end header -->
         <!-- 1 Home Section -->
         <section id="home" class="full-height primary-bg">
-            <img id="main-img" alt="Miguel Silva" class="img-responsive" src="<?php echo get_option('normal_img')?>" data-twist="<?php echo get_option('twist_img')?>" data-normal="<?php echo get_option('normal_img')?>" >
+            <img id="main-img" alt="Miguel Silva" class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/library/img/normal.png" data-twist="<?php echo get_stylesheet_directory_uri(); ?>/library/img/twist.png" data-normal="<?php echo get_stylesheet_directory_uri(); ?>/library/img/normal.png" >
         </section>
 
