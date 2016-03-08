@@ -37,7 +37,11 @@ function wp_bootstrap_theme_js()
     wp_enqueue_script('wpbs-js-dev');
     wp_enqueue_script('modernizr');
 }
-
+//remove emoji metadata from header
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 /**
  * show pages in main query
  */
