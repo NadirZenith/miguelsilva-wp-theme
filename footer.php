@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col-sm-offset-3 col-sm-8 col-md-offset-4 col-lg-offset-3">
-                <h1>Contact</h1>
+                <h1><?php _e('Contact', 'ms')?></h1>
                 <hr class="star">
 
                 <div class="row">

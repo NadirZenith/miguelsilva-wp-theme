@@ -1,18 +1,11 @@
 <?php
-include 'nzdebug.php';
-add_action('wp_enqueue_scripts', 'wordpress_bootstrap_parent_theme_enqueue_styles');
-
-function wordpress_bootstrap_parent_theme_enqueue_styles()
-{
-    /* wp_enqueue_style('wordpress-bootstrap-style', get_template_directory_uri() . '/style.css'); */
-    /* wp_enqueue_style('amagency-style', get_stylesheet_directory_uri() . '/style.css', array('wordpress-bootstrap-style')); */
-}
+load_theme_textdomain('ms', get_stylesheet_directory() . '/languages');
 
 function wp_bootstrap_theme_styles()
 {
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory
     //  if you want to make any changes to the master bootstrap.css.
-    wp_register_style('wpbs', get_stylesheet_directory_uri() . '/library/dist/css/styles.f5ae27ca.min.css', array(), '1.0', 'all');
+    wp_register_style('wpbs', get_stylesheet_directory_uri() . '/library/dist/css/styles.6c2e68de.min.css', array(), '1.0', 'all');
     wp_enqueue_style('wpbs');
 
     // For child themes
@@ -38,10 +31,11 @@ function wp_bootstrap_theme_js()
     wp_enqueue_script('modernizr');
 }
 //remove emoji metadata from header
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_styles', 'print_emoji_styles');
+
 /**
  * show pages in main query
  */
@@ -49,6 +43,10 @@ function single_page_app_query($query)
 {
     if (!$query->is_main_query() || is_admin()) {
         return;
+    }
+    if ($query->is_page) {
+        wp_redirect(home_url());
+        exit;
     }
     $query->set('showposts', -1);
     $query->set('post_type', array('page'));

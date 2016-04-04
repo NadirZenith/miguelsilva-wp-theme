@@ -14,7 +14,6 @@ if (have_posts()) : while (have_posts()) : the_post();
 
         $page_section_title = get_post_meta(get_the_ID(), 'section-title', true);
         $section_title = (empty($page_section_title)) ? get_the_title() : $page_section_title;
-
         ?>
 
         <section id="<?php echo get_post_field('post_name', get_post()) ?>" <?php post_class($section_class); ?> >
@@ -28,6 +27,13 @@ if (have_posts()) : while (have_posts()) : the_post();
                         <div class="post_content clearfix">
                             <?php the_content(); ?>
                         </div> 
+                        <?php
+                        if (current_user_can('edit_post', get_the_ID())) {
+                            ?>
+                            <a href="<?php echo get_edit_post_link(get_the_ID()) ?>"><?php _e('edit') ?></a>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

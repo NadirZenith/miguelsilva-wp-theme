@@ -12,7 +12,7 @@
         <title><?php wp_title('|', true, 'right'); ?></title>	
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
+        <link rel="shortcut icon" type="image/x-icon" sizes="16x16 24x24 32x32 48x48 64x64" href="<?php echo get_stylesheet_directory_uri(); ?>/library/img/favicon.ico">
         <!-- wordpress head functions -->
         <?php wp_head(); ?>
         <!-- end of wordpress head -->
@@ -71,7 +71,7 @@
                             <?php endwhile; ?>	
                             <?php $page_footer_name = 'Contact' ?>
                             <li>
-                                <a class="page-scroll" href="#page-footer"><?php echo $page_footer_name ?></a>
+                                <a class="page-scroll" href="#page-footer"><?php _e('Contact', 'ms') ?></a>
                             </li>
 
                         <?php endif; ?>
@@ -79,6 +79,11 @@
 
                 </div>
                 <!-- /.navbar-collapse -->
+                <?php if (function_exists('pll_the_languages')): ?>
+                    <div class="language-switcher pull-right">
+                        <ul><?php pll_the_languages(array('show_flags' => true, 'show_names' => false)); ?></ul>
+                    </div>
+                <?php endif; ?>
                 <div class="socials pull-right">
                     <?php echo do_shortcode('[nz-social-contacts]') ?>
                 </div>
