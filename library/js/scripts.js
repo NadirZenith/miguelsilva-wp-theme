@@ -82,7 +82,8 @@
                 }
             }
         });
-
+/*
+ * 
         $(document).on('mouseleave', function (e) {
             console.log($(window).scrollTop());
 
@@ -101,6 +102,7 @@
             }
 
         });
+ */
 
         //jQuery to collapse the navbar on scroll
         $(window).scroll(function () {
